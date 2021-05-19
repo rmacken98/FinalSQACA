@@ -7,6 +7,13 @@ public class Controller {
 		Rubric newRubric = new Rubric(name, criteria); 
 				return newRubric;
 		
+    }
+    
+    // Adds a criteria to a rubric
+    public static Rubric addCriteria(Rubric rubric, Criterion criterion) {
+		
+		rubric.addCriterion(criterion);
+		return rubric;
 	}
-	
+
 }
