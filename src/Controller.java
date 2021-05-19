@@ -14,6 +14,29 @@ public class Controller {
 		
 		rubric.addCriterion(criterion);
 		return rubric;
-	}
+    }
+    
+    //returns a list of all rubrics
+	public static ArrayList<Rubric> getAllRubrics(ArrayList<Rubric> allRubrics) {	
+		
+		return allRubrics;
+    }
+    
 
+     // method to search through list of rubrics by name to find a specific rubric object 
+	public static Rubric getSpecificRubric(String rubricName, ArrayList<Rubric> rubric) {
+        Rubric specificRubric = null;
+    
+        for(Rubric search: rubric)
+        {
+            if(search.getRubricName().equalsIgnoreCase(rubricName))
+            {
+                
+                specificRubric= search;
+            }
+
+        }
+        
+        return specificRubric;
+}
 }
