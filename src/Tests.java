@@ -62,11 +62,11 @@ public class Tests {
        // Test to check that getAllRubrics method retrieves all rubrics in arraylist
        @Test 
        public void getAllRubrics() {
-           ArrayList<Rubric> allRubrics = new ArrayList<Rubric>();
+            ArrayList<Rubric> allRubrics = new ArrayList<Rubric>();
             Criterion criterion= new Criterion("Documentation");
            
-             ArrayList<Criterion> criteria = new ArrayList<Criterion>();
-             criteria.add(criterion);
+            ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+            criteria.add(criterion);
             
             Rubric rubric1 = new Rubric ("Final Year Project", criteria);
             Rubric rubric2 = new Rubric ("Final Year Project2", criteria);
@@ -76,5 +76,27 @@ public class Tests {
             assertEquals("Number of Rubrics is : 2",2, Controller.getAllRubrics(allRubrics).size());
    
        }
+
+         // Test to see if searching for a specific rubric returns desired rubric.
+	    @Test 
+	    public void getSpecificRubric() {
+		    String rubric = "Final year project";
+		    ArrayList<Rubric> Rubrics = new ArrayList<Rubric>();
+		    Criterion criterion = new Criterion("Documentation");
+		
+		    ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+		    criteria.add(criterion);
+		 
+		    Rubric rubric1 = new Rubric ("Final Year Project", criteria);
+		    Rubric rubric2 = new Rubric ("Management Exam", criteria);
+		    Rubrics.add(rubric1);
+		    Rubrics.add(rubric2);
+		
+		    assertEquals("Specific Rubric returned",rubric1, 
+		    Controller.getSpecificRubric(rubric,Rubrics));
+		
+	}
+
+
 
 }
