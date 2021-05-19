@@ -43,7 +43,18 @@ public void setCriterion(ArrayList<Criterion> criterion) {
 	this.criteria = criterion;
 }
 
-
+// sets limit of criteria that can be added to 10 
+// throws exception if limit is exceeded
+public void addCriterion(Criterion criterion) {
+	if(this.criteria.size()<10) {
+		
+		this.criteria.add(criterion);
+	}
+	else {
+		throw new IllegalArgumentException("There can only be a maximum of 10 criteria");
+	}
+	
+}
 
 	
 	
