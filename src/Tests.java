@@ -41,4 +41,21 @@ public class Tests {
 
     }
 
+
+
+       	// Test that Student Grade is created and A criterion score is added to the grade
+	@Test
+	public void  addCriterionScoreToGrade() {
+		 Criterion criterion = new Criterion("Documentation");
+		 criterion.setScore(5);
+		 ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+		 criteria.add(criterion);
+
+		 Rubric rubric = new Rubric ("Final Year Project", criteria);
+
+		 StudentGrade studentGrade = new StudentGrade(rubric.getCriterion());
+		 assertTrue("StudentGrade created with score added",studentGrade instanceof StudentGrade);
+		 assertEquals("Number of Grades is : 1",1 ,studentGrade.getCriterion().size());
+    }
+
 }
