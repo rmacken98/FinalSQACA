@@ -14,6 +14,11 @@ public class Controller {
 		
 		rubric.addCriterion(criterion);
 		return rubric;
+    }
+    
+    //returns a list of all rubrics
+	public static ArrayList<Rubric> getAllRubrics(ArrayList<Rubric> allRubrics) {	
+		
+		return allRubrics;
 	}
-
 }

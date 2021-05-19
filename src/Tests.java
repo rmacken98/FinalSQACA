@@ -58,4 +58,23 @@ public class Tests {
 		 assertEquals("Number of Grades is : 1",1 ,studentGrade.getCriterion().size());
     }
 
+
+       // Test to check that getAllRubrics method retrieves all rubrics in arraylist
+       @Test 
+       public void getAllRubrics() {
+           ArrayList<Rubric> allRubrics = new ArrayList<Rubric>();
+            Criterion criterion= new Criterion("Documentation");
+           
+             ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+             criteria.add(criterion);
+            
+            Rubric rubric1 = new Rubric ("Final Year Project", criteria);
+            Rubric rubric2 = new Rubric ("Final Year Project2", criteria);
+            allRubrics.add(rubric1);
+            allRubrics.add(rubric2);
+           
+            assertEquals("Number of Rubrics is : 2",2, Controller.getAllRubrics(allRubrics).size());
+   
+       }
+
 }
