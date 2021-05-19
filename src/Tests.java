@@ -58,4 +58,15 @@ public class Tests {
 		 assertEquals("Number of Grades is : 1",1 ,studentGrade.getCriterion().size());
     }
 
+
+    // Test to check that exception is thrown if invalid criterion score is set
+    @Test(expected = IllegalArgumentException.class)
+	public void isCriterionScoreInvalid() {
+		Criterion c1 = new Criterion("Documentation");
+		 c1.setScore(5);
+		 c1.setScore(75);
+		 c1.setScore(-200);
+	}
+    
 }
+
