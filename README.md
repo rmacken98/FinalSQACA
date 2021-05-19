@@ -5,7 +5,6 @@ This is the current backlog of current tasks that need to completed for this spr
 
 Tasks will be removed from the backlog as they are completed.
 
-- Add a criteria score to a student grade. 
 - Get a list of all Rubrics. 
 - Get a specific Rubric by name.
 - Get a list of all Student Grades associated with a rubric. 
