@@ -84,3 +84,23 @@ Getting the standard Deviation of all student grades related to a rubric is larg
   As it will require being able to get the values from each of the student grades related to a rubric and performing a calculation with those values.
 - I will have to research on how to calculate the standard deviation.
 - It will require unit tests to ensure the feature works correctly.
+
+# Velocity 
+The sprint Velocity metric determines average number of story points that a team can achieve within a sprint.
+
+This project has been undertaken under one sprint.
+
+In order to calculate the velocity for this project I assigned time values to each task size.
+
+- Small = any task that will take under 1 hours.  
+- Medium = any task that will take 2 hours.  
+- Large = any that will take 4 hours.  
+
+Then multiply the number of tasks related to a size by the time value that has been assigned.
+
+Here we have 6 Small, 5 Medium, and 4 Large so the time required to complete this sprint will be :
+
+(6x1)+(5x2)x(4x4) = 29 hours
+
+Then to calculate the velocity metric we divide the number of points completed at the end of each sprint by number of sprints.
+In this instance the velocity will be 29 as there is only one sprint. 
