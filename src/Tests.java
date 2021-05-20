@@ -302,41 +302,44 @@ public class Tests {
           
         
     }
- //Test to get the max and minimum student grade from a rubric.
- @Test
- public void getHighestGrade() {
-     String rubric = "Final year project";
-     
-        ArrayList<Rubric> Rubrics = new ArrayList<Rubric>();
-        ArrayList<Criterion> criteria = new ArrayList<Criterion>();
-        ArrayList<Criterion> criteria2 = new ArrayList<Criterion>();
+    // Test to get the max and minimum student grade from a rubric.
+	// Also tests standard deviation calculation.
+	@Test
+	public void minMaxAndStandardDevGrade() {
+		String rubric = "Final year project";
 
-        ArrayList<StudentGrade> studentGrades = new ArrayList<StudentGrade>();
-        
-        Criterion criterion1 = Controller.createNewCriterion("Documentation");		
-        Criterion criterion2 = Controller.createNewCriterion("Testing");			
-        Criterion criterion3 = Controller.createNewCriterion("Technical Solution");
-        Rubric rubric1 = new Rubric ("Final Year Project", criteria);
+		ArrayList<Rubric> Rubrics = new ArrayList<Rubric>();
+		ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+		ArrayList<Criterion> criteria2 = new ArrayList<Criterion>();
 
-        StudentGrade studentGrade1 =new StudentGrade(criteria);
-        StudentGrade studentGradeg2 = new StudentGrade(criteria2);
-        
-       Controller.gradeACriterion(criterion1, studentGrade1, 5);
-       Controller.gradeACriterion(criterion2, studentGrade1, 5);
-       Controller.gradeACriterion(criterion3, studentGrade1, 5);
-       Controller.gradeACriterion(criterion1, studentGradeg2, 1);
-       Controller.gradeACriterion(criterion2, studentGradeg2, 1);
-       Controller.gradeACriterion(criterion3, studentGradeg2, 1);
-        
-        rubric1.addGrade(studentGrade1);
-        rubric1.addGrade(studentGradeg2);
-        studentGrades.add(studentGrade1);
-        studentGrades.add(studentGradeg2);
-        Rubrics.add(rubric1);
-        
-        assertEquals(15, Controller.getMinorMaxGradeforRubric(rubric, Rubrics,"Max"));
-        assertEquals(3, Controller.getMinorMaxGradeforRubric(rubric, Rubrics,"Min"));
+		ArrayList<StudentGrade> studentGrades = new ArrayList<StudentGrade>();
 
+		Criterion criterion1 = Controller.createNewCriterion("Documentation");
+		Criterion criterion2 = Controller.createNewCriterion("Testing");
+		Criterion criterion3 = Controller.createNewCriterion("Technical Solution");
+		Rubric rubric1 = new Rubric("Final Year Project", criteria);
+
+		StudentGrade studentGrade1 = new StudentGrade(criteria);
+		StudentGrade studentGradeg2 = new StudentGrade(criteria2);
+
+		Controller.gradeACriterion(criterion1, studentGrade1, 5);
+		Controller.gradeACriterion(criterion2, studentGrade1, 3);
+		Controller.gradeACriterion(criterion3, studentGrade1, 2);
+		Controller.gradeACriterion(criterion1, studentGradeg2, 3);
+		Controller.gradeACriterion(criterion2, studentGradeg2, 2);
+		Controller.gradeACriterion(criterion3, studentGradeg2, 3);
+
+		rubric1.addGrade(studentGrade1);
+		rubric1.addGrade(studentGradeg2);
+		studentGrades.add(studentGrade1);
+		studentGrades.add(studentGradeg2);
+		Rubrics.add(rubric1);
+
+		assertEquals(1, Math.round(Controller.getStandardDeviationRubricScore(rubric, Rubrics)));
+		assertEquals(10, Controller.getMinorMaxGradeforRubric(rubric, Rubrics, "Max"));
+		assertEquals(8, Controller.getMinorMaxGradeforRubric(rubric, Rubrics, "Min"));
+
+	}
        
      
  }

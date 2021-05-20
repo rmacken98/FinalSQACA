@@ -107,5 +107,10 @@ public static int getMinorMaxGradeofCriterion(ArrayList<StudentGrade> studentGra
 	return rubric.minOrMaxCriterionGrade(criterionName,option);
 }
 
+public static double getStandardDeviationRubricScore(String rubricName, ArrayList<Rubric> rubrics) {
+	Rubric rubric = getSpecificRubric(rubricName,rubrics);
+	return rubric.getGrades().get(0).getStandardDeviation();
+	
+}
 
 }
