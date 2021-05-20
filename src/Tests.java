@@ -130,7 +130,7 @@ public class Tests {
 		
 	}
 
-
+// Test to check that list of student grades is returned from getGrades in Student Grade class
     @Test 
     public void getGrades() {
         ArrayList<Criterion> criteria = new ArrayList<Criterion>();
@@ -147,6 +147,34 @@ public class Tests {
         grade.addCriterion(criterion2);
         
         assertEquals("List of grades returned",2,grade.getGrades().size());	
+
+        
+        
+    }
+    // Test to check that a list of student grades from a specific criterion is returned from getgetCriterionGrade() in rubric class
+    @Test 
+    public void getCriterionGrades() {
+        ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+        Rubric rubric= Controller.createRubric("Final Year Project", criteria);
+        Criterion criterion1 = Controller.createNewCriterion("Documentation");
+        criterion1.setScore(5);
+        Criterion criterion2 =Controller.createNewCriterion("Testing");
+        criterion2.setScore(5);
+        
+        
+        
+        StudentGrade grade = new StudentGrade(criteria);
+        StudentGrade grade2 = new StudentGrade(criteria);
+
+        grade.addCriterion(criterion1);
+        grade.addCriterion(criterion2);
+        
+        rubric.addGrade(grade);
+         rubric.addGrade(grade2);
+
+        
+        
+        assertEquals("List of grades returned",2,rubric.getCriterionGrade("Testing").size());	
 
         
         
