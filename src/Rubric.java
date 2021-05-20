@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Rubric {
 	private String rubricName;
@@ -87,4 +88,18 @@ public class Rubric {
 				
 	
 	}
+
+
+	public int highestGrade()
+{	
+	ArrayList<Integer> grades = new ArrayList<Integer>();
+
+	
+	for(StudentGrade studentGrade : this.getGrades())
+	{
+		grades.add(studentGrade.getTotalGrade());
+	}
+	
+	return Collections.max(grades);
+}
 }

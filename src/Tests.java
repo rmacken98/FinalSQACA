@@ -303,24 +303,41 @@ public class Tests {
         
     }
 
-	  //Test to check that total student grade is calculated.
-	  @Test
-	  public void getTotalGrade() {		  
-			 ArrayList<Criterion> criteria = new ArrayList<Criterion>();
-			 ArrayList<StudentGrade> studentGrades = new ArrayList<StudentGrade>();
-			 
-			 Criterion criterion1 = Controller.createNewCriterion("Documentation");		
-			 Criterion criterion2 = Controller.createNewCriterion("Testing");			
-			 Criterion criterion3 = Controller.createNewCriterion("Technical Solution");
-			 
-	   
-	        StudentGrade studentGrade1 =new StudentGrade(criteria);
-	       	Controller.gradeACriterion(criterion1, studentGrade1, 5);
-	        Controller.gradeACriterion(criterion2, studentGrade1, 5);
-	        Controller.gradeACriterion(criterion3, studentGrade1, 5);
-	       	 
-			assertEquals(15, studentGrade1.getTotalGrade());
-	  }
+ //Test to get the highest student grade from a rubric.
+ @Test
+ public void getHighestGrade() {
+     String rubric = "Final year project";
+     
+        ArrayList<Rubric> Rubrics = new ArrayList<Rubric>();
+        ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+        ArrayList<Criterion> criteria2 = new ArrayList<Criterion>();
+
+        ArrayList<StudentGrade> studentGrades = new ArrayList<StudentGrade>();
+        
+        Criterion criterion1 = Controller.createNewCriterion("Documentation");		
+        Criterion criterion2 = Controller.createNewCriterion("Testing");			
+        Criterion criterion3 = Controller.createNewCriterion("Technical Solution");
+        Rubric rubric1 = new Rubric ("Final Year Project", criteria);
+
+        StudentGrade studentGrade1 =new StudentGrade(criteria);
+        StudentGrade studentGradeg2 = new StudentGrade(criteria2);
+        
+       Controller.gradeACriterion(criterion1, studentGrade1, 5);
+       Controller.gradeACriterion(criterion2, studentGrade1, 5);
+       Controller.gradeACriterion(criterion3, studentGrade1, 5);
+       
+       Controller.gradeACriterion(criterion1, studentGradeg2, 1);
+       Controller.gradeACriterion(criterion2, studentGradeg2, 1);
+       Controller.gradeACriterion(criterion3, studentGradeg2, 1);
+        
+        rubric1.addGrade(studentGrade1);
+        rubric1.addGrade(studentGradeg2);
+
+        Rubrics.add(rubric1);
+        
+        assertEquals(15, Controller.getHighestGradeforRubric(rubric, Rubrics));       
+     
+ }
 	
 
 }

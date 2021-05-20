@@ -78,4 +78,9 @@ public static double getAverageOfCriterion(ArrayList<StudentGrade> studentGrades
 	return rubric.getCriterionAverage(criterionName);
 }
 
+public static int getHighestGradeforRubric(String rubricName, ArrayList<Rubric> rubrics){
+	Rubric rubric= getSpecificRubric(rubricName,rubrics);
+	return rubric.highestGrade();
+}
+
 }
