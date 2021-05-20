@@ -303,5 +303,25 @@ public class Tests {
         
     }
 
+	  //Test to check that total student grade is calculated.
+	  @Test
+	  public void getTotalGrade() {		  
+			 ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+			 ArrayList<StudentGrade> studentGrades = new ArrayList<StudentGrade>();
+			 
+			 Criterion criterion1 = Controller.createNewCriterion("Documentation");		
+			 Criterion criterion2 = Controller.createNewCriterion("Testing");			
+			 Criterion criterion3 = Controller.createNewCriterion("Technical Solution");
+			 
+	   
+	        StudentGrade studentGrade1 =new StudentGrade(criteria);
+	       	Controller.gradeACriterion(criterion1, studentGrade1, 5);
+	        Controller.gradeACriterion(criterion2, studentGrade1, 5);
+	        Controller.gradeACriterion(criterion3, studentGrade1, 5);
+	       	 
+			assertEquals(15, studentGrade1.getTotalGrade());
+	  }
+	
+
 }
 
