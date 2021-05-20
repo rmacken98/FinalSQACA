@@ -39,5 +39,16 @@ public ArrayList<Integer> getGrades()
 }
 
 
+// calculates the mean from list of student grades
+public double getAverage() {
+	
+	double totalScore= 0;
+	for(int i: this.getGrades()) {
+		
+		totalScore+=i;
+	}
+	double mean = totalScore/this.getGrades().size();
+	return mean;
+			}
 
 }
