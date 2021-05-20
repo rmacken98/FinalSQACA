@@ -143,4 +143,30 @@ public int highestCriterionGrade(String criterion) {
 
 }
 
+
+public int lowestCriterionGrade(String criterion) {
+	ArrayList<Integer> grades = new ArrayList<Integer>();
+
+	
+	for(StudentGrade studentGrade : this.getGrades())
+	{
+		for(int i=0; i< this.grades.size();i++) {
+			
+			{
+			if (studentGrade.getCriterion().get(i).getCriteria().equalsIgnoreCase(criterion)) {
+				grades.add(studentGrade.getGrades().get(i));
+			}
+			}
+	}
+		
+		
+		for(int i: this.getCriterionGrade(criterion)) {
+			
+			grades.add(studentGrade.getGrades().get(i));		}
+	}
+	return Collections.min(grades);
+	
+
+}
+
 }
