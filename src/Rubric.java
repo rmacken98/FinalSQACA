@@ -58,12 +58,12 @@ public class Rubric {
 	public ArrayList<Integer> getCriterionGrade(String criterion) {
 		ArrayList<Integer> grades = new ArrayList<Integer>();
 
-		for (StudentGrade c : this.grades)
+		for (StudentGrade studentGrade : this.grades)
 			for (int i = 0; i < this.grades.size(); i++) {
 
 				{
-					int score = c.getCriterion().get(i).getScore();
-					if (c.getCriterion().get(i).getCriteria().equalsIgnoreCase(criterion)) {
+					int score = studentGrade.getCriterion().get(i).getScore();
+					if (studentGrade.getCriterion().get(i).getCriteria().equalsIgnoreCase(criterion)) {
 
 						grades.add(score);
 
@@ -74,4 +74,17 @@ public class Rubric {
 		return grades;
 	}
 
+	// gets the average grade for a specific criterion
+	public double getCriterionAverage(String criterion){
+	
+		double totalScore= 0;
+		for(int i: this.getCriterionGrade(criterion)) {
+			
+			totalScore+=i;
+		}
+		double mean = totalScore/this.getGrades().size();
+		return mean;
+				
+	
+	}
 }
