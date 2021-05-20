@@ -39,4 +39,21 @@ public class Controller {
         
         return specificRubric;
 }
+
+// searches through array list of rubrics and gets a list of the grades for the desired rubric
+public static ArrayList<StudentGrade> getGradesbyRubric(ArrayList<Rubric> rubric , String rubricName)
+{
+    ArrayList<StudentGrade> grades = null;
+    for(Rubric search: rubric)
+    {
+        if(search.getRubricName().equalsIgnoreCase(rubricName))
+        {
+            
+            grades= search.getGrades();
+        }
+
+    }
+    return grades; 
+}
+
 }

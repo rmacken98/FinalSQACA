@@ -97,6 +97,37 @@ public class Tests {
 		
 	}
 
+// Test to search for a rubric and a list of the grades for each of its criteria
+    @Test
+    public void getGradesbyRubric() {
+        
+         String rubricName = "Final year project";
+
+         ArrayList<Rubric> Rubrics = new ArrayList<Rubric>();
+         ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+
+         Criterion criterion1 = new Criterion("Documentation");
+         Criterion criterion2 = new Criterion("Testing");
+         
+         criterion1.setScore(5);
+         criterion2.setScore(5);
+            
+         Rubric rubric1 = new Rubric ("Final Year Project", criteria);
+         Rubric rubric2 = new Rubric ("Management Exam", criteria);
+         
+         rubric1.addCriterion(criterion1);
+         rubric1.addCriterion(criterion2);
+        
+         StudentGrade studentGrade = new StudentGrade(rubric1.getCriterion());
+         rubric1.addGrade(studentGrade);
+
+         Rubrics.add(rubric1);
+         Rubrics.add(rubric2);
+         
+         assertEquals("Specific Rubric returned",rubric1.getGrades(), 
+         Controller.getGradesbyRubric(Rubrics, rubricName));		
+    }
+
 
 
 }
