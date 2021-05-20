@@ -63,4 +63,19 @@ public double getAverage() {
 		return totalScore;
 		
 	}
+
+	public double getStandardDeviation() {
+		double mean = this.getAverage();
+		double sum=0;
+		for(int i=0;i<this.getGrades().size();i++) 
+		{
+			sum+=Math.pow((this.getGrades().get(i)-mean),2);
+		
+		}
+		mean=sum/(this.getGrades().size());
+		double standardDeviation = Math.sqrt(mean);
+		return standardDeviation;
+	}
+
+
 }
