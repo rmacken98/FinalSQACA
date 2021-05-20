@@ -340,40 +340,43 @@ public class Tests {
      
  }
 	
-// Test to check that the student grade with highest score for criterion is returned
-@Test
-public void HighestCriterion() {
-    
-    String rubric = "Final year project";
-      
-     ArrayList<Rubric> Rubrics = new ArrayList<Rubric>();
-     ArrayList<Criterion> criteria = new ArrayList<Criterion>();
-     ArrayList<StudentGrade> studentGrades = new ArrayList<StudentGrade>();		 
-     StudentGrade studentGrade1 = new StudentGrade(criteria);
-     StudentGrade studentGrade2 = new StudentGrade(criteria);
+	// Test to check that the student grade with highest and lowest scores for a criterion is returned
+	@Test
+	public void HighestCriterion() {
+		
+		String rubric = "Final year project";
+		  
+		 ArrayList<Rubric> Rubrics = new ArrayList<Rubric>();
+		 ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+		 ArrayList<StudentGrade> studentGrades = new ArrayList<StudentGrade>();		 
+		 StudentGrade studentGrade1 = new StudentGrade(criteria);
+		 StudentGrade studentGrade2 = new StudentGrade(criteria);
 
-        
-        Controller.gradeANewCriterion("Documentation", studentGrade1, 5);
-        Controller.gradeANewCriterion("Testing", studentGrade1, 3);
-        Controller.gradeANewCriterion("Tech", studentGrade1, 2);
-        Controller.gradeANewCriterion("Documentation", studentGrade2, 1);
-        Controller.gradeANewCriterion("Testing", studentGrade2, 1);
-        Controller.gradeANewCriterion("Tech", studentGrade2, 1);
-        
-        
-        
-     Rubric rubric1 = new Rubric ("Final Year Project", criteria);
+	        
+	        Controller.gradeANewCriterion("Documentation", studentGrade1, 5);
+	        Controller.gradeANewCriterion("Testing", studentGrade1, 1);
+	        Controller.gradeANewCriterion("Tech", studentGrade1, 2);
+	        Controller.gradeANewCriterion("Documentation", studentGrade2, 1);
+	        Controller.gradeANewCriterion("Testing", studentGrade2, 5);
+	        Controller.gradeANewCriterion("Tech", studentGrade2, 1);
+	        
+	        
+	        
+		 Rubric rubric1 = new Rubric ("Final Year Project", criteria);
 
-     rubric1.addGrade(studentGrade1);
-     rubric1.addGrade(studentGrade2);
-     
+		 rubric1.addGrade(studentGrade1);
+		 rubric1.addGrade(studentGrade2);
+		 
 
-     studentGrades.add(studentGrade1);
-     studentGrades.add(studentGrade2);
+		 studentGrades.add(studentGrade1);
+		 studentGrades.add(studentGrade2);
 
-     Rubrics.add(rubric1);   
-     assertEquals(5, Controller.getHighestGradeofCriterion(studentGrades, "Documentation"));
+		 Rubrics.add(rubric1);   
+         assertEquals(5, Controller.getHighestGradeofCriterion(studentGrades, "Documentation"));
+         assertEquals(5, Controller.getLowestGradeofCriterion(studentGrades, "Testing"));
 
-}
+	}
+	
+
 }
 

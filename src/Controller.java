@@ -101,4 +101,20 @@ public static int getHighestGradeofCriterion(ArrayList<StudentGrade> studentGrad
 	return rubric.highestCriterionGrade(criterionName);
 }
 
+
+public static int getLowestGradeofCriterion(ArrayList<StudentGrade> studentGrades, String criterionName) {
+	
+	ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+	Rubric rubric =new Rubric("dummy rubric",criteria);
+	try {
+	for (int i=0; i<studentGrades.size();i++ ) {
+		rubric.addGrade(studentGrades.get(i));
+	}
+	}catch(Exception e) {e.printStackTrace();}
+	return rubric.lowestCriterionGrade(criterionName);
+}
+
+
+
+
 }
