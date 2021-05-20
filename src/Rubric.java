@@ -89,84 +89,61 @@ public class Rubric {
 	
 	}
 
+	// method to get either the highest or lowest student grade for a rubric
+	public int minOrMaxGrade(String option) {
+		ArrayList<Integer> grades = new ArrayList<Integer>();
 
-	public int highestGrade()
-{	
-	ArrayList<Integer> grades = new ArrayList<Integer>();
-
-	
-	for(StudentGrade studentGrade : this.getGrades())
-	{
-		grades.add(studentGrade.getTotalGrade());
-	}
-	
-	return Collections.max(grades);
-}
-
-public int lowestGrade()
-{	
-	ArrayList<Integer> grades = new ArrayList<Integer>();
-
-	
-	for(StudentGrade studentGrade : this.getGrades())
-	{
-		grades.add(studentGrade.getTotalGrade());
-	}
-	
-	return Collections.min(grades);
-}
-
-
-
-public int highestCriterionGrade(String criterion) {
-	ArrayList<Integer> grades = new ArrayList<Integer>();
-
-	
-	for(StudentGrade studentGrade : this.getGrades())
-	{
-		for(int i=0; i< this.grades.size();i++) {
-			
-			{
-			if (studentGrade.getCriterion().get(i).getCriteria().equalsIgnoreCase(criterion)) {
-				grades.add(studentGrade.getGrades().get(i));
-			}
-			}
-	}
+		
+		for (StudentGrade studentGrade : this.getGrades()) {
+			grades.add(studentGrade.getTotalGrade());
+		}
 		
 		
-		for(int i: this.getCriterionGrade(criterion)) {
+		if (option.equalsIgnoreCase("max")) {
 			
-			grades.add(studentGrade.getGrades().get(i));		}
+			return Collections.max(grades);
+			
+		} 
+		else if (option.equalsIgnoreCase("min")) {
+			
+			return Collections.min(grades);
+		}
+
+		else {
+			throw new IllegalArgumentException("Must choose an option of either Max or Min");
+		}
+
 	}
-	return Collections.max(grades);
 	
+	// method to get either the highest or lowest student grade for a criterion
 
-}
+	public int minOrMaxCriterionGrade(String criterion, String option) {
+		ArrayList<Integer> grades = new ArrayList<Integer>();
 
+		for (StudentGrade studentGrade : this.getGrades()) {
+			for (int i = 0; i < this.grades.size(); i++) {
 
-public int lowestCriterionGrade(String criterion) {
-	ArrayList<Integer> grades = new ArrayList<Integer>();
-
-	
-	for(StudentGrade studentGrade : this.getGrades())
-	{
-		for(int i=0; i< this.grades.size();i++) {
-			
-			{
-			if (studentGrade.getCriterion().get(i).getCriteria().equalsIgnoreCase(criterion)) {
-				grades.add(studentGrade.getGrades().get(i));
+				if (studentGrade.getCriterion().get(i).getCriteria().equalsIgnoreCase(criterion)) {
+					grades.add(studentGrade.getGrades().get(i));
+				}
 			}
-			}
-	}
-		
-		
-		for(int i: this.getCriterionGrade(criterion)) {
+		}
+
+		if (option.equalsIgnoreCase("max")) {
 			
-			grades.add(studentGrade.getGrades().get(i));		}
+			return Collections.max(grades);
+			
+		} 
+		else if (option.equalsIgnoreCase("min")) {
+			
+			return Collections.min(grades);
+		}
+
+		else {
+			throw new IllegalArgumentException("Must choose an option of either Max or Min");
+		}
+
 	}
-	return Collections.min(grades);
-	
 
 }
 
-}
