@@ -15,4 +15,29 @@ public ArrayList<Criterion> getCriterion() {
 public void setCriterion(ArrayList<Criterion> criterion) {
 	this.criteria = criterion;
 }
+
+public void addCriterion(Criterion criterion) {
+		
+	this.criteria.add(criterion);
+
+}
+
+public ArrayList<Integer> getGrades()
+{
+	
+	ArrayList<Integer> grades = new ArrayList<Integer>();
+
+
+	for(Criterion c : this.criteria)
+	{
+		int score = c.getScore();
+		grades.add(score);
+	}
+
+	
+	return grades;
+}
+
+
+
 }

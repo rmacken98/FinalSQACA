@@ -130,6 +130,30 @@ public class Tests {
 		
 	}
 
+
+    @Test 
+    public void getGrades() {
+        ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+        Controller.createRubric("Final Year Project", criteria);
+        Criterion criterion1 = Controller.createNewCriterion("Documentation");
+        criterion1.setScore(5);
+        Criterion criterion2 =Controller.createNewCriterion("Testing");
+        criterion2.setScore(5);
+        
+        
+        
+        StudentGrade grade = new StudentGrade(criteria);
+        grade.addCriterion(criterion1);
+        grade.addCriterion(criterion2);
+        
+        assertEquals("List of grades returned",2,grade.getGrades().size());	
+
+        
+        
+    }
+
+
+
 // Test to search for a rubric and a list of the grades for each of its criteria
     @Test
     public void getGradesbyRubric() {
