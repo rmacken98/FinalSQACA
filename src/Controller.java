@@ -78,4 +78,34 @@ public static double getAverageOfCriterion(ArrayList<StudentGrade> studentGrades
 	return rubric.getCriterionAverage(criterionName);
 }
 
+public static int getHighestGradeforRubric(String rubricName, ArrayList<Rubric> rubrics){
+	Rubric rubric= getSpecificRubric(rubricName,rubrics);
+	return rubric.highestGrade();
+}
+
+public static int getLowestGradeforRubric(String rubricName, ArrayList<Rubric> rubrics){
+	Rubric rubric= getSpecificRubric(rubricName,rubrics);
+	return rubric.lowestGrade();
+}
+
+
+public static int getMinorMaxGradeforRubric(String rubricName, ArrayList<Rubric> rubrics,String option){
+	Rubric rubric= getSpecificRubric(rubricName,rubrics);
+	return rubric.minOrMaxGrade(option);
+}
+
+
+public static int getMinorMaxGradeofCriterion(ArrayList<StudentGrade> studentGrades, String criterionName,String option) {
+	
+	ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+	Rubric rubric =new Rubric("dummy rubric",criteria);
+
+	for (int i=0; i<studentGrades.size();i++ ) {
+		rubric.addGrade(studentGrades.get(i));
+	}
+	
+	return rubric.minOrMaxCriterionGrade(criterionName,option);
+}
+
+
 }

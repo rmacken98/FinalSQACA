@@ -6,9 +6,8 @@ This is the current backlog of current tasks that need to completed for this spr
 Tasks will be removed from the backlog as they are completed.
 
 - Get the standard deviation of the score for all students related to specific rubric. 
-- Get the minimum and maximum scores of all the student grades related to a specific rubric.
 - Get the standard deviation of the score for a specific criterion.
-- Get the minimum and maximum scores for scores of a specific criterion. 
+
 
 # Task Estimation
 The approach I decided to use for the estimates for each task in the sprint backlog.

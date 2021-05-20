@@ -51,4 +51,16 @@ public double getAverage() {
 	return mean;
 			}
 
+
+			//calculates a student's total grade
+	public int getTotalGrade()
+	{
+		int totalScore = 0;
+		for(int i : this.getGrades())
+		{
+			totalScore+= i;
+		}
+		return totalScore;
+		
+	}
 }

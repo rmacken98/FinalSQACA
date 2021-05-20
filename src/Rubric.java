@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Rubric {
 	private String rubricName;
@@ -87,4 +88,62 @@ public class Rubric {
 				
 	
 	}
+
+	// method to get either the highest or lowest student grade for a rubric
+	public int minOrMaxGrade(String option) {
+		ArrayList<Integer> grades = new ArrayList<Integer>();
+
+		
+		for (StudentGrade studentGrade : this.getGrades()) {
+			grades.add(studentGrade.getTotalGrade());
+		}
+		
+		
+		if (option.equalsIgnoreCase("max")) {
+			
+			return Collections.max(grades);
+			
+		} 
+		else if (option.equalsIgnoreCase("min")) {
+			
+			return Collections.min(grades);
+		}
+
+		else {
+			throw new IllegalArgumentException("Must choose an option of either Max or Min");
+		}
+
+	}
+	
+	// method to get either the highest or lowest student grade for a criterion
+
+	public int minOrMaxCriterionGrade(String criterion, String option) {
+		ArrayList<Integer> grades = new ArrayList<Integer>();
+
+		for (StudentGrade studentGrade : this.getGrades()) {
+			for (int i = 0; i < this.grades.size(); i++) {
+
+				if (studentGrade.getCriterion().get(i).getCriteria().equalsIgnoreCase(criterion)) {
+					grades.add(studentGrade.getGrades().get(i));
+				}
+			}
+		}
+
+		if (option.equalsIgnoreCase("max")) {
+			
+			return Collections.max(grades);
+			
+		} 
+		else if (option.equalsIgnoreCase("min")) {
+			
+			return Collections.min(grades);
+		}
+
+		else {
+			throw new IllegalArgumentException("Must choose an option of either Max or Min");
+		}
+
+	}
+
 }
+
