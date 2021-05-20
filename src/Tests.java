@@ -302,8 +302,7 @@ public class Tests {
           
         
     }
-
- //Test to get the highest student grade from a rubric.
+ //Test to get the max and minimum student grade from a rubric.
  @Test
  public void getHighestGrade() {
      String rubric = "Final year project";
@@ -325,58 +324,56 @@ public class Tests {
        Controller.gradeACriterion(criterion1, studentGrade1, 5);
        Controller.gradeACriterion(criterion2, studentGrade1, 5);
        Controller.gradeACriterion(criterion3, studentGrade1, 5);
-
        Controller.gradeACriterion(criterion1, studentGradeg2, 1);
        Controller.gradeACriterion(criterion2, studentGradeg2, 1);
        Controller.gradeACriterion(criterion3, studentGradeg2, 1);
         
         rubric1.addGrade(studentGrade1);
         rubric1.addGrade(studentGradeg2);
-
+        studentGrades.add(studentGrade1);
+        studentGrades.add(studentGradeg2);
         Rubrics.add(rubric1);
         
-        assertEquals(15, Controller.getHighestGradeforRubric(rubric, Rubrics));  
-        assertEquals(3, Controller.getLowestGradeforRubric(rubric, Rubrics));       
+        assertEquals(15, Controller.getMinorMaxGradeforRubric(rubric, Rubrics,"Max"));
+        assertEquals(3, Controller.getMinorMaxGradeforRubric(rubric, Rubrics,"Min"));
+
+       
      
  }
-	
-	// Test to check that the student grade with highest and lowest scores for a criterion is returned
-	@Test
-	public void HighestCriterion() {
-		
-		String rubric = "Final year project";
-		  
-		 ArrayList<Rubric> Rubrics = new ArrayList<Rubric>();
-		 ArrayList<Criterion> criteria = new ArrayList<Criterion>();
-		 ArrayList<StudentGrade> studentGrades = new ArrayList<StudentGrade>();		 
-		 StudentGrade studentGrade1 = new StudentGrade(criteria);
-		 StudentGrade studentGrade2 = new StudentGrade(criteria);
+// Test to check that the student grade with highest and lowest scores for a criterion is returned
+@Test
+public void MinOrMaxCriterion() {
+   
+   String rubric = "Final year project";
+     
+    ArrayList<Rubric> Rubrics = new ArrayList<Rubric>();
+    ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+    ArrayList<StudentGrade> studentGrades = new ArrayList<StudentGrade>();		 
+    StudentGrade studentGrade1 = new StudentGrade(criteria);
+    StudentGrade studentGrade2 = new StudentGrade(criteria);
 
-	        
-	        Controller.gradeANewCriterion("Documentation", studentGrade1, 5);
-	        Controller.gradeANewCriterion("Testing", studentGrade1, 1);
-	        Controller.gradeANewCriterion("Tech", studentGrade1, 2);
-	        Controller.gradeANewCriterion("Documentation", studentGrade2, 1);
-	        Controller.gradeANewCriterion("Testing", studentGrade2, 5);
-	        Controller.gradeANewCriterion("Tech", studentGrade2, 1);
-	        
-	        
-	        
-		 Rubric rubric1 = new Rubric ("Final Year Project", criteria);
+       
+       Controller.gradeANewCriterion("Documentation", studentGrade1, 5);
+       Controller.gradeANewCriterion("Testing", studentGrade1, 1);
+       Controller.gradeANewCriterion("Tech", studentGrade1, 2);
+       Controller.gradeANewCriterion("Documentation", studentGrade2, 1);
+       Controller.gradeANewCriterion("Testing", studentGrade2, 5);
+       Controller.gradeANewCriterion("Tech", studentGrade2, 1);
+       
+       
+       
+    Rubric rubric1 = new Rubric ("Final Year Project", criteria);
 
-		 rubric1.addGrade(studentGrade1);
-		 rubric1.addGrade(studentGrade2);
-		 
+    rubric1.addGrade(studentGrade1);
+    rubric1.addGrade(studentGrade2);
+    
 
-		 studentGrades.add(studentGrade1);
-		 studentGrades.add(studentGrade2);
+    studentGrades.add(studentGrade1);
+    studentGrades.add(studentGrade2);
 
-		 Rubrics.add(rubric1);   
-         assertEquals(5, Controller.getHighestGradeofCriterion(studentGrades, "Documentation"));
-         assertEquals(5, Controller.getLowestGradeofCriterion(studentGrades, "Testing"));
-
-	}
-	
+    Rubrics.add(rubric1);   
+    assertEquals(5, Controller.getMinorMaxGradeofCriterion(studentGrades, "Documentation","max"));
+    assertEquals(1, Controller.getMinorMaxGradeofCriterion(studentGrades, "Testing","min"));
 
 }
-
+}
