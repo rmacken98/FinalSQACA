@@ -56,4 +56,11 @@ public static ArrayList<StudentGrade> getGradesbyRubric(ArrayList<Rubric> rubric
     return grades; 
 }
 
+// calculates the average student grades from a specified rubric
+public static double getAverageRubricScore(String rubricName, ArrayList<Rubric> rubrics) {
+	Rubric rubric = getSpecificRubric(rubricName,rubrics);
+	return rubric.getGrades().get(0).getAverage();
+	
+}
+
 }

@@ -214,7 +214,39 @@ public class Tests {
     }
 
 
+  //Test to check that the average grade for a rubric is calculated
+  @Test
+  public void getAverageGrade(){
+      
+          String rubric = "Final year project";
+         ArrayList<Rubric> Rubrics = new ArrayList<Rubric>();
+         ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+         
+         Criterion criterion1 = Controller.createNewCriterion("Documentation");		
+         Criterion criterion2 = Controller.createNewCriterion("Testing");			
+         Criterion criterion3 = Controller.createNewCriterion("Technical Solution");
+        
+         criterion1.setScore(5);
+         criterion2.setScore(3);
+         criterion3.setScore(2);
+            
+         Rubric rubric1 = Controller.createRubric("Final Year Project", criteria);
+         Rubric rubric2 = Controller.createRubric("Management Exam", criteria);
 
+         
+         rubric1.addCriterion(criterion1);
+         rubric1.addCriterion(criterion2);
+         rubric1.addCriterion(criterion3);
+        
+         StudentGrade studentGrade = new StudentGrade(rubric1.getCriterion());
+         rubric1.addGrade(studentGrade);
+
+         Rubrics.add(rubric1);
+         Rubrics.add(rubric2);
+       
+         assertEquals(3, Math.round(Controller.getAverageRubricScore(rubric, Rubrics)));		
+      
+  }
 
 }
 
