@@ -55,7 +55,10 @@ public void addCriterion(Criterion criterion) {
 	}
 	
 }
-
+public void addGrade(StudentGrade grade)
+{
+	this.grades.add(grade);
+}
 	
 	
 }
