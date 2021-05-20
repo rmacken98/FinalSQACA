@@ -145,5 +145,25 @@ public class Rubric {
 
 	}
 
+	public double getStandardDeviation(String criterion) {
+
+		double totalScore = 0;
+		for (int i : this.getCriterionGrade(criterion)) {
+
+			totalScore += i;
+		}
+		double mean = totalScore / this.getGrades().size();
+		double sum=0;
+		for(int i=0;i<this.getGrades().size();i++) 
+		{
+			sum+=Math.pow((this.getCriterionGrade(criterion).get(i)-mean),2);
+		
+		}
+		mean=sum/(this.getGrades().size());
+		double standardDeviation = Math.sqrt(mean);
+		return standardDeviation;
+
+	}
+
 }
 

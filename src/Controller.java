@@ -107,5 +107,23 @@ public static int getMinorMaxGradeofCriterion(ArrayList<StudentGrade> studentGra
 	return rubric.minOrMaxCriterionGrade(criterionName,option);
 }
 
+public static double getStandardDeviationRubricScore(String rubricName, ArrayList<Rubric> rubrics) {
+	Rubric rubric = getSpecificRubric(rubricName,rubrics);
+	return rubric.getGrades().get(0).getStandardDeviation();
+	
+}
+
+//calculates the standard deviation of grades for a specific criterion
+public static double getStandardDeviationCriterion(ArrayList<StudentGrade> studentGrades, String criterionName) {
+	
+	ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+	Rubric rubric =new Rubric("dummy rubric",criteria);
+	
+	for (int i=0; i<studentGrades.size();i++ ) {
+		rubric.addGrade(studentGrades.get(i));
+	}
+	
+	return rubric.getStandardDeviation(criterionName);
+}
 
 }
