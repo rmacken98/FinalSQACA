@@ -89,32 +89,23 @@ public static int getLowestGradeforRubric(String rubricName, ArrayList<Rubric> r
 }
 
 
-public static int getHighestGradeofCriterion(ArrayList<StudentGrade> studentGrades, String criterionName) {
-	
-	ArrayList<Criterion> criteria = new ArrayList<Criterion>();
-	Rubric rubric =new Rubric("dummy rubric",criteria);
-	try {
-	for (int i=0; i<studentGrades.size();i++ ) {
-		rubric.addGrade(studentGrades.get(i));
-	}
-	}catch(Exception e) {e.printStackTrace();}
-	return rubric.highestCriterionGrade(criterionName);
+public static int getMinorMaxGradeforRubric(String rubricName, ArrayList<Rubric> rubrics,String option){
+	Rubric rubric= getSpecificRubric(rubricName,rubrics);
+	return rubric.minOrMaxGrade(option);
 }
 
 
-public static int getLowestGradeofCriterion(ArrayList<StudentGrade> studentGrades, String criterionName) {
+public static int getMinorMaxGradeofCriterion(ArrayList<StudentGrade> studentGrades, String criterionName,String option) {
 	
 	ArrayList<Criterion> criteria = new ArrayList<Criterion>();
 	Rubric rubric =new Rubric("dummy rubric",criteria);
-	try {
+
 	for (int i=0; i<studentGrades.size();i++ ) {
 		rubric.addGrade(studentGrades.get(i));
 	}
-	}catch(Exception e) {e.printStackTrace();}
-	return rubric.lowestCriterionGrade(criterionName);
+	
+	return rubric.minOrMaxCriterionGrade(criterionName,option);
 }
-
-
 
 
 }
