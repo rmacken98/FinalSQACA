@@ -56,4 +56,26 @@ public static ArrayList<StudentGrade> getGradesbyRubric(ArrayList<Rubric> rubric
     return grades; 
 }
 
+// calculates the average student grades from a specified rubric
+public static double getAverageRubricScore(String rubricName, ArrayList<Rubric> rubrics) {
+	Rubric rubric = getSpecificRubric(rubricName,rubrics);
+	return rubric.getGrades().get(0).getAverage();
+	
+}
+
+
+
+// calculates the average grade for a specific criterion
+public static double getAverageOfCriterion(ArrayList<StudentGrade> studentGrades, String criterionName) {
+	
+	ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+	Rubric rubric =new Rubric("dummy rubric",criteria);
+	try {
+	for (int i=0; i<studentGrades.size();i++ ) {
+		rubric.addGrade(studentGrades.get(i));
+	}
+	}catch(Exception e) {e.printStackTrace();}
+	return rubric.getCriterionAverage(criterionName);
+}
+
 }

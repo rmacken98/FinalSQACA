@@ -214,7 +214,94 @@ public class Tests {
     }
 
 
+  //Test to check that the average grade for a rubric is calculated
+  @Test
+  public void getAverageGrade(){
+      
+          String rubric = "Final year project";
+         ArrayList<Rubric> Rubrics = new ArrayList<Rubric>();
+         ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+         
+         Criterion criterion1 = Controller.createNewCriterion("Documentation");		
+         Criterion criterion2 = Controller.createNewCriterion("Testing");			
+         Criterion criterion3 = Controller.createNewCriterion("Technical Solution");
+        
+         criterion1.setScore(5);
+         criterion2.setScore(3);
+         criterion3.setScore(2);
+            
+         Rubric rubric1 = Controller.createRubric("Final Year Project", criteria);
+         Rubric rubric2 = Controller.createRubric("Management Exam", criteria);
 
+         
+         rubric1.addCriterion(criterion1);
+         rubric1.addCriterion(criterion2);
+         rubric1.addCriterion(criterion3);
+        
+         StudentGrade studentGrade = new StudentGrade(rubric1.getCriterion());
+         rubric1.addGrade(studentGrade);
+
+         Rubrics.add(rubric1);
+         Rubrics.add(rubric2);
+       
+         assertEquals(3, Math.round(Controller.getAverageRubricScore(rubric, Rubrics)));		
+      
+  }
+    // Tests to check whether the average score for a specified criterion is calculated
+    @Test 
+    public void getAverageofACriterion() {
+        
+             String rubric = "Final year project";
+        
+           ArrayList<Rubric> Rubrics = new ArrayList<Rubric>();
+           ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+           ArrayList<StudentGrade> studentGrades = new ArrayList<StudentGrade>();
+           
+           Criterion criterion1 = Controller.createNewCriterion("Documentation");		
+           Criterion criterion2 = Controller.createNewCriterion("Testing");			
+           Criterion criterion3 = Controller.createNewCriterion("Technical Solution");
+          
+           criterion1.setScore(3);
+           criterion3.setScore(4);
+           criterion2.setScore(1);
+              
+           Rubric rubric1 = new Rubric ("Final Year Project", criteria);
+           Rubric rubric2 = new Rubric ("Management Exam", criteria);
+           
+           rubric1.addCriterion(criterion1);
+           rubric1.addCriterion(criterion2);
+           rubric1.addCriterion(criterion3);
+          
+           criterion2.setScore(5);
+           rubric2.addCriterion(criterion2);
+           
+           StudentGrade studentGrade = new StudentGrade(criteria);
+           StudentGrade studentGrade2 = new StudentGrade(criteria);
+           
+           studentGrade.addCriterion(criterion2);
+           studentGrade.addCriterion(criterion1);
+
+           studentGrade2.addCriterion(criterion2);
+           studentGrade2.addCriterion(criterion3);
+
+           criteria.add(criterion1);
+           
+           rubric1.addGrade(studentGrade);
+           rubric1.addGrade(studentGrade);
+           
+           Controller.addCriterionToStudentGrade(criterion1, studentGrade);
+           Controller.addCriterionToStudentGrade(criterion1, studentGrade2);
+           studentGrades.add(studentGrade);
+           studentGrades.add(studentGrade2);
+
+           Rubrics.add(rubric1);
+           Rubrics.add(rubric2);
+
+           
+           assertEquals(3, Math.round(Controller.getAverageofCriterion(studentGrades, "documentation")));
+          
+        
+    }
 
 }
 
