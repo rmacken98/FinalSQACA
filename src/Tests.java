@@ -325,7 +325,7 @@ public class Tests {
        Controller.gradeACriterion(criterion1, studentGrade1, 5);
        Controller.gradeACriterion(criterion2, studentGrade1, 5);
        Controller.gradeACriterion(criterion3, studentGrade1, 5);
-       
+
        Controller.gradeACriterion(criterion1, studentGradeg2, 1);
        Controller.gradeACriterion(criterion2, studentGradeg2, 1);
        Controller.gradeACriterion(criterion3, studentGradeg2, 1);
@@ -335,7 +335,8 @@ public class Tests {
 
         Rubrics.add(rubric1);
         
-        assertEquals(15, Controller.getHighestGradeforRubric(rubric, Rubrics));       
+        assertEquals(15, Controller.getHighestGradeforRubric(rubric, Rubrics));  
+        assertEquals(3, Controller.getLowestGradeforRubric(rubric, Rubrics));       
      
  }
 	

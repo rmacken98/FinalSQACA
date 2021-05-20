@@ -83,4 +83,9 @@ public static int getHighestGradeforRubric(String rubricName, ArrayList<Rubric> 
 	return rubric.highestGrade();
 }
 
+public static int getLowestGradeforRubric(String rubricName, ArrayList<Rubric> rubrics){
+	Rubric rubric= getSpecificRubric(rubricName,rubrics);
+	return rubric.LowestGrade();
+}
+
 }

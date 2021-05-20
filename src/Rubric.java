@@ -102,4 +102,18 @@ public class Rubric {
 	
 	return Collections.max(grades);
 }
+
+public int lowestGrade()
+{	
+	ArrayList<Integer> grades = new ArrayList<Integer>();
+
+	
+	for(StudentGrade studentGrade : this.getGrades())
+	{
+		grades.add(studentGrade.getTotalGrade());
+	}
+	
+	return Collections.min(grades);
+}
+
 }
