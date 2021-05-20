@@ -42,7 +42,28 @@ public class Tests {
     }
 
 
+	@Test
+	public void rubricAddgradeLoop() {
+		ArrayList<Criterion> criteria= new ArrayList<Criterion>();
+		Rubric r = Controller.createRubric("Exam", criteria);
+		ArrayList<StudentGrade> grades = new ArrayList<StudentGrade>();
+		StudentGrade studentGrade1 = new StudentGrade(criteria);
+		StudentGrade studentGradeg2 = new StudentGrade(criteria);
+		grades.add(studentGrade1);
+		grades.add(studentGradeg2);
 
+		Controller.gradeACriterion("Documentation", studentGrade1, 5);
+		Controller.gradeACriterion("Testing", studentGrade1, 3);
+		Controller.gradeACriterion("Technical Solution", studentGrade1, 2);
+		Controller.gradeACriterion("Documentation", studentGradeg2, 3);
+		Controller.gradeACriterion("Testing", studentGradeg2, 2);
+		Controller.gradeACriterion("Technical Solution", studentGradeg2, 3);
+		
+		assertEquals("Number of Rubrics is : 2", 2, Controller.loopAddGrades(r, grades).getGrades().size());
+
+		
+		
+	}
        	// Test that Student Grade is created and A criterion score is added to the grade
 	@Test
 	public void  addCriterionScoreToGrade() {
