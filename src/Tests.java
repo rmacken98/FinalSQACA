@@ -59,6 +59,39 @@ public class Tests {
     }
 
 
+    // Test to check that exception is thrown if invalid criterion score is set
+    @Test(expected = IllegalArgumentException.class)
+	public void isCriterionScoreInvalid() {
+		Criterion c1 = new Criterion("Documentation");
+		 c1.setScore(5);
+		 c1.setScore(75);
+		 c1.setScore(-200);
+	}
+    
+        // Test to check if student grades are added to a rubric
+        // and scores from criterion are added to a student grade
+	 @Test
+     public void addStudentGrade(){
+      Rubric rubric = new Rubric("Finaly Year Project");
+      Criterion c1 = new Criterion("Documentation");
+      Criterion c2 = new Criterion("Testing");
+
+     // sets the students score 
+      c1.setScore(5);
+      c2.setScore(2);
+     
+      rubric.addCriterion(c1);
+      rubric.addCriterion(c2);
+      
+      StudentGrade studentGrade = new StudentGrade(rubric.getCriterion());
+      //adds the grade to the rubric
+      rubric.addGrade(studentGrade);
+      
+      assertEquals("Grade added to rubric",1,rubric.getGrades().size());	
+      assertEquals("Score of first criterion","5",studentGrade.getGrades().get(0).toString());	
+
+     }
+
        // Test to check that getAllRubrics method retrieves all rubrics in arraylist
        @Test 
        public void getAllRubrics() {
@@ -99,4 +132,6 @@ public class Tests {
 
 
 
+
 }
+
