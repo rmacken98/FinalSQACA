@@ -90,3 +90,40 @@ Here we have 6 Small, 5 Medium, and 4 Large so the time required to complete thi
 
 Then to calculate the velocity metric we divide the number of points completed at the end of each sprint by number of sprints.
 In this instance the velocity will be 29 as there is only one sprint. 
+
+# Test Driven Development + Unit Testing
+
+Test driven development(TDD) is a software development approach where before implementing a piece of functionality for a project the following steps are taken: 
+ - A test case is created that will specify and check what the result of the functionality should be. 
+ - The test should be failing initially.
+ - Then the code to implement the desired functionality is written to get the test to pass.
+ - Then if needed the code is refactored and the test is run again to see if it still passes.
+    - Note: some refactoring may require the test to be updated before it can take place.
+ - Once the test passes and the functionality is implemented move on to the next task and repeat the process.
+
+The benefit of using this approach is that it helps ensure that the code base is free from bugs.
+
+This approach was used in the development of this project. 
+
+Before committing any code I would first write a failing the test and then implement the feature and once each step had been completed I pushed the feature along with its test. 
+
+Below are examples of different commits first showing a feature and its associated test and second showing a test being updated for the refactoring of the feature and third another instance where a new test was created before refactoring.
+
+
+## Max Grade Feature
+
+- [Max Grade feature with its test](https://github.com/rmacken98/FinalSQACA/commit/82dfeb0fa3986a9cf1c150bc8b6eb9ca76bfecba).
+
+
+## Refactored Max Grade Feature 
+
+- [Updated test for refactored Max Grade](https://github.com/rmacken98/FinalSQACA/commit/877a36bf8d290c84c3899cd280a8e86a1780ffbc)
+
+- [Refactored Method for Max Grade](https://github.com/rmacken98/FinalSQACA/commit/1dc2c4b48faced82cdf81748d08ab600a72d1407)
+
+## Refactored Controller methods using duplicate loops
+
+- [Test for adding grades loop method](https://github.com/rmacken98/FinalSQACA/commit/f585ee721208572e8961fdcf1b518907eecc995d)
+
+- [Add grades loop method implementation](https://github.com/rmacken98/FinalSQACA/commit/3dd2c383faf7f62a6dfde0b6e84e64cb3901cd93)
+
