@@ -115,14 +115,33 @@ public class Tests {
 
 		assertEquals("Specific Rubric returned", r, Controller.getSpecificRubric(rubric, Rubrics));
 
+    }
+    
+
+    @Test
+	public void studentGradeCriterionTests() {
+		ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+		StudentGrade studentGrade = new StudentGrade(criteria);
+		Controller.gradeACriterion("Documentation", studentGrade, 5);
+		
+		assertEquals( 1, studentGrade.getCriterion().size());
+		assertEquals( 5, studentGrade.getCriterionGrade("Documentation").get(0));
+		assertEquals( "Documentation", studentGrade.getCriterionName(0));
 	}
 
-	@Test(expected = IllegalArgumentException.class)
-	public void isCriterionScoreInvalid() {
-		Criterion c1 = new Criterion("Documentation");
-		c1.setScore(5);
-		c1.setScore(75);
-		c1.setScore(-200);
+
+    @Test
+    public void isCriteerionScoreInvalid() {
+		
+		ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+		StudentGrade studentGrade = new StudentGrade(criteria);
+		
+		assertEquals( 5, Controller.gradeACriterion("Documentation", studentGrade, 5).getGrades().get(0));
+
+		assertThrows(IllegalArgumentException.class, () -> {
+			Controller.gradeACriterion("Documentation", studentGrade, 75);
+		  });
+	
 	}
 
 	// Test to check if student grades are added to rubric and scores from criterion
