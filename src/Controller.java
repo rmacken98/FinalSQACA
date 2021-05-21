@@ -15,6 +15,15 @@ public class Controller {
 		rubric.addCriterion(criterion);
 		return rubric;
     }
+
+
+    public static StudentGrade gradeACriterion(String criterion, StudentGrade studentGrade,int grade) {
+		Criterion setCriterionScore = new Criterion(criterion);
+		setCriterionScore.setCriteria(criterion);
+		setCriterionScore.setScore(grade);
+		studentGrade.addCriterion(setCriterionScore);
+		return studentGrade;
+	}
     
     //returns a list of all rubrics
 	public static ArrayList<Rubric> getAllRubrics(ArrayList<Rubric> allRubrics) {	
@@ -62,7 +71,12 @@ public static double getAverageRubricScore(String rubricName, ArrayList<Rubric> 
 	return rubric.getGrades().get(0).getAverage();
 	
 }
-
+public static Rubric loopAddGrades(Rubric rubric,ArrayList<StudentGrade> studentGrades) {
+    for (int i=0; i<studentGrades.size();i++ ) {
+        rubric.addGrade(studentGrades.get(i));
+    }
+    return rubric;
+}
 
 
 // calculates the average grade for a specific criterion
