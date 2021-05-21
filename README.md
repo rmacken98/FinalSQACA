@@ -193,6 +193,95 @@ Using this tool in conjunction with test driven development helped minimize the 
 | [release-1.0.0]((https://github.com/rmacken98/FinalSQACA/tree/release-1.0.0)) | Release branch for the project's first release |
 
 
+# Code Reviews 
+Code Reviews are the process by which programmers carry out a systematic review of software source code generally reviewing the code of their colleagues. However, since this project was undertaken individually I reviewed my own code and pull requests. 
+
+## Review Process 
+For this project I decided that there would be 3 types of pull requests for merging into the development branch which were documentation, new features, and fixes/enhancements with each type having their own checklist. 
+
+The main purpose of the fixes/enhancements pull request is for fixes or enhancements to both the project's documentation and features addressing issues that may have been missed in previous code reviews.
+
+ Since I was reviewing my own work rather than having peers doing so occasionally there were issues I did not notice during reviews. 
+ 
+ To address this issue upon completion of the documentation and features I conducted another review of the project's documentation and features referring to their checklists and making changes when needed.
+ 
+  Then conducting another review of the fixes or enhancements before merging the pull request.
+
+## Code Review Checklists
+
+### Checklist for Documentation
+| Question| Answer |
+| ------------- |:-------------:|
+| Is the description of the topic clear? |Yes|
+| Is the pull request correctly labeled?    | Yes  |
+| Grammatical errors? | No  |
+| Is the content of the topic clear and relevant?    | Yes |
+| Is the topic layout well structured?    | Yes|
+
+
+### Checklist for new feature
+| Question| Answer |
+| ------------- |:-------------:|
+| Is the description of the feature clear? |Yes|
+| Is the pull request correctly labeled?    | Yes  |
+| Do the tests pass?    | Yes  |
+| Does the implementation meet the full requirements of the task?    | Yes  |
+| Are the commit messages  clear?  | Yes  |
+| Does the code have comments? if so are they clear and meaningful?  | Yes  |
+| Does the code follow the set naming rules?  | Yes  |
+| Is the code structure well laid out and easy to read?  | Yes  |
+| Is there duplication of code that can be removed?  | No |
+| Has the backlog been updated?  | Yes  |
+
+
+### Checklist for fix or enhancement
+| Question| Answer |
+| ------------- |:-------------:|
+| Is the description of the fix/enhancement clear? |Yes|
+| Is the pull request correctly labeled?    | Yes  |
+| Do the tests pass?    | Yes  |
+| Are the commit messages  clear?  | Yes  |
+| Does the code have comments? if so are they clear and meaningful?  | Yes  |
+| Does the code follow the set naming rules?  | Yes  |
+| Does it improve the overall layout of project| N/A |
+| Does it fix a bug that previously existed in the project | N/A |
+| Does it reduce code duplicate code missed in reviews ? | N/A |
+
+
+## Pull Request process
+
+### Steps taken when creating a PR:
+
+- When creating a pull request I made sure to label the pull request as one of the 3 types.
+
+
+- I then assigned the responsibility of the pull request to myself as I would have done in team environment.
+
+<p align="center">
+<img src="./images/pullrequestLabel.jpg" alt="Assigning Label and PR type" >
+</p>
+
+
+
+- Before merging any pull request I conducted a review using the checklist for the pull request type reviewing the files then marking them as viewed.
+
+
+![Assigning Label and PR type](./images/viewed.jpg "Assigning Label and PR type")
+
+
+- I then commented the completed checklist of the pull request.
+
+![Assigning Label and PR type](./images/review.jpg "Assigning Label and PR type")
+
+
+- Finally I then merged the pull request.
+
+### Sample Pull Requests
+| Type |
+| ------------- |
+| [Documentation](https://github.com/rmacken98/FinalSQACA/pull/15) |
+| [New Feature](https://github.com/rmacken98/FinalSQACA/pull/8)  |
+| [Fix/Enhancement](https://github.com/rmacken98/FinalSQACA/pull/12)  |
 
 
 
