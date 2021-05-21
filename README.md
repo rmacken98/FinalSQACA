@@ -141,4 +141,19 @@ However, EclEmma also has an overall coverage report for a project along with a 
 ![Initial coverage report upon project completion](./images/initialCoverage.jpg "Coverage report.")
 
 
+I made use of the tool's coverage report once I had completed the project tasks and noted that the overall coverage for the project was 95% which was satisfactory however, after looking at the coverage for each class I noted as can be seen above the coverage for the student grade class was only 75%.
+
+I then checked to see what methods had not been covered by a test and then created tests for these methods. They had been missed in the test driven development process as they where being called by other methods which were tested but these methods were never tested directly. 
+
+- [New test created to improve Student Grade test coverage](https://github.com/rmacken98/FinalSQACA/pull/12/commits/ca93fbb755ba70eb7feb4263ae1e34fa80aaeb64)
+
+Afterwards the I ran the tests again got the updated coverage report.
+
+![Coverage report after updated](./images/OverallCoverage.jpg "Coverage report.")
+
+
+As seen above the overall test coverage for the project increase to 97.4% and the Student Grade class coverage increased to 95.5% with all classes now being above 90%.
+
+Using this tool in conjunction with test driven development helped minimize the amount of bugs in the project ensuring that every method was covered by a unit test. 
+
 
