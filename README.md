@@ -254,6 +254,11 @@ The main purpose of the fixes/enhancements pull request is for fixes or enhancem
 
 - When creating a pull request I made sure to label the pull request as one of the 3 types.
 
+- I then wrote a clear description of what was being addressed in the pull request.
+
+![PR Description](./images/description.jpg "PR Description")
+
+
 
 - I then assigned the responsibility of the pull request to myself as I would have done in team environment.
 
