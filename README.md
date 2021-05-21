@@ -1,3 +1,12 @@
+# Demonstrating Software Quality 
+
+## Introduction
+
+The purpose of this sample project is to illustrate the best practices that should be followed when implementing a software project to ensure that the software is of high quality.
+
+The sample project here is for the implementation of a Rubric component for student grades.
+
+
 
 # Sprint Backlog
 ## Backlog of Tasks
@@ -178,6 +187,7 @@ Using this tool in conjunction with test driven development helped minimize the 
 | ------------- |:-------------:|
 | [main](https://github.com/rmacken98/FinalSQACA)    | Master branch | 
 | [dev](https://github.com/rmacken98/FinalSQACA/tree/dev)   | Development branch which each feature branch was branched off of and merged back into |
+| [introduction](https://github.com/rmacken98/FinalSQACA/tree/sprint-planning) |Feature branch for documentation containing the introduction to the project |
 | [sprint-planning](https://github.com/rmacken98/FinalSQACA/tree/sprint-planning) |Feature branch for documentation containing information of the sprint planning for the project|
 | [create-rubric-component](https://github.com/rmacken98/FinalSQACA/tree/create-rubric-component)  | Feature branch for the creation of the rubric component classes with auto generated getters + setters  |
 | [add-methods](https://github.com/rmacken98/FinalSQACA/tree/add-methods) | Feature branch for the project's different add methods (e.g. adding a graded criterion to a student grade) |
