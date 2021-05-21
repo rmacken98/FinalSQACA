@@ -147,7 +147,7 @@ However, this extension's test report only provided a list of the number of test
 Upon further research I decided to use EclEmma which is a java test coverage tool built into the Eclipse IDE. I decided to use this tool as I have a lot of previous experience using Eclipse and EclEmma provides the same features as the Java Test Runner extension for vsCode.
 However, EclEmma also has an overall coverage report for a project along with a test report. Showing the percentage of the functionality that has been covered by JUnit tests for the project overall and for each class in the project. 
 
-![Initial coverage report upon project completion](./images/initialCoverage.jpg "Coverage report.")
+![Initial coverage report upon project completion](./images/initialCoverage.JPG "Coverage report.")
 
 
 I made use of the tool's coverage report once I had completed the project tasks and noted that the overall coverage for the project was 95% which was satisfactory however, after looking at the coverage for each class I noted as can be seen above the coverage for the student grade class was only 75%.
@@ -158,7 +158,7 @@ I then checked to see what methods had not been covered by a test and then creat
 
 Afterwards the I ran the tests again got the updated coverage report.
 
-![Coverage report after updated](./images/OverallCoverage.jpg "Coverage report.")
+![Coverage report after updated](./images/OverallCoverage.JPG "Coverage report.")
 
 
 As seen above the overall test coverage for the project increase to 97.4% and the Student Grade class coverage increased to 95.5% with all classes now being above 90%.
@@ -266,7 +266,7 @@ The main purpose of the fixes/enhancements pull request is for fixes or enhancem
 
 - I then wrote a clear description of what was being addressed in the pull request.
 
-![PR Description](./images/description.jpg "PR Description")
+![PR Description](./images/description.JPG "PR Description")
 
 
 
@@ -274,7 +274,7 @@ The main purpose of the fixes/enhancements pull request is for fixes or enhancem
 
 
 <p align="center">
-<img src="./images/pullrequestLabel.jpg" alt="Assigning Label and PR type" >
+<img src="./images/pullrequestLabel.JPG" alt="Assigning Label and PR type" >
 </p>
 
 - I then checked that the pull request was merging into the correct branch before creating the pull request.
@@ -283,12 +283,12 @@ The main purpose of the fixes/enhancements pull request is for fixes or enhancem
 - Before merging any pull request I conducted a review using the checklist for the pull request type reviewing the files then marking them as viewed.
 
 
-![Assigning Label and PR type](./images/viewed.jpg "Assigning Label and PR type")
+![Assigning Label and PR type](./images/viewed.JPG "Assigning Label and PR type")
 
 
 - I then commented the completed checklist of the pull request.
 
-![Assigning Label and PR type](./images/review.jpg "Assigning Label and PR type")
+![Assigning Label and PR type](./images/review.JPG "Assigning Label and PR type")
 
 
 - Finally I then merged the pull request.
