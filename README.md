@@ -156,4 +156,44 @@ As seen above the overall test coverage for the project increase to 97.4% and th
 
 Using this tool in conjunction with test driven development helped minimize the amount of bugs in the project ensuring that every method was covered by a unit test. 
 
+# Team Version-Control
+ For the team version-control of this project I used the Gitflow process branching model.
+
+
+## Outline of Gitflow model:
+
+- New features in development are built within their own feature branches.
+- These branches are branched off of the development branch.
+- Once a feature has been completed the feature branch is merged into the development branch.
+- Then once the project the ready for release the development branch is merged into release branch.
+- The release branch is then merged into the master branch.
+
+## Advantages of Gitflow process:
+- Allows for easier collaboration as two or more developers can work on the same feature and since each feature branch is only concerned with getting that feature working. It makes it easier to track the work of the other developers.
+- Allows for parallel development of multiple feature. Since features are isolated to their own branch if another task needs to worked that is a bigger priority the developer can simply commit their changes and switch branches and begin working on the other task.
+- Aides in staging releases since all completed features are merged into the develop. When creating a release branch it only needs to be branched off of the development branch to contain all the features for ready for the release.
+
+## Branches used in this project
+| Branch| Purpose |
+| ------------- |:-------------:|
+| main    | Master branch | 
+| dev    | Development branch which each feature branch was branched off of and merged back into |
+| sprint-planning |Feature branch for documentation containing information of the sprint planning for the project|
+| create-rubric-component   | Feature branch for the creation of the rubric component classes with auto generated getters + setters  |
+| add-methods | Feature branch for the project's different add methods (e.g. adding a graded criterion to a student grade) |
+| get-methods   | Feature branch for the project's different get methods (e.g. getting a list of student grades or list of rubrics) |
+| mean-calculations   | Feature branch for the mean calculation features of the project (e.g. getting average student grade for a rubric) |
+| min-max-calculations   | Feature branch for the getting minimum and maximum calculation features of the project (e.g. getting highest or lowest student grade for a rubric) |
+| standard-deviation-calculations   | Feature branch for the standard deviation calculation features of the project (e.g. getting standard deviation of student grades for a rubric) |
+| unit-testing-tdd |Feature branch for documentation containing information on the unit testing and test driven development process |
+| test-coverage |Feature branch for documentation containing information on the project's test coverage |
+| team-version-control |Feature branch for documentation containing information on the GitFlow process |
+| code-review |Feature branch for documentation containing information on the project's code review process |
+| fixes-and-enhancements |Hot fix branch for any fixes or enhancements that need to made to project that may have been missed in reviews |
+| release-1.0.0 | Release branch for the project's first release |
+
+
+
+
+
 
