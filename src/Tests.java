@@ -115,7 +115,21 @@ public class Tests {
 
 		assertEquals("Specific Rubric returned", r, Controller.getSpecificRubric(rubric, Rubrics));
 
+    }
+    
+
+    @Test
+	public void studentGradeCriterionTests() {
+		ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+		StudentGrade studentGrade = new StudentGrade(criteria);
+		Controller.gradeACriterion("Documentation", studentGrade, 5);
+		
+		assertEquals( 1, studentGrade.getCriterion().size());
+		assertEquals( 5, studentGrade.getCriterionGrade("Documentation").get(0));
+		assertEquals( "Documentation", studentGrade.getCriterionName(0));
 	}
+
+
     @Test
     public void isCriteerionScoreInvalid() {
 		
