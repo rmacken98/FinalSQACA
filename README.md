@@ -157,7 +157,7 @@ As seen above the overall test coverage for the project increase to 97.4% and th
 Using this tool in conjunction with test driven development helped minimize the amount of bugs in the project ensuring that every method was covered by a unit test. 
 
 # Team Version-Control
- For the team version-control of this project I used the Gitflow process branching model.
+ For the team version-control of this project I used the Gitflow process branching model when creating new branches during its development.
 
 
 ## Outline of Gitflow model:
