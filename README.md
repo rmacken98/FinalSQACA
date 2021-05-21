@@ -262,10 +262,12 @@ The main purpose of the fixes/enhancements pull request is for fixes or enhancem
 
 - I then assigned the responsibility of the pull request to myself as I would have done in team environment.
 
+
 <p align="center">
 <img src="./images/pullrequestLabel.jpg" alt="Assigning Label and PR type" >
 </p>
 
+- I then checked that the pull request was merging into the correct branch before creating the pull request.
 
 
 - Before merging any pull request I conducted a review using the checklist for the pull request type reviewing the files then marking them as viewed.
