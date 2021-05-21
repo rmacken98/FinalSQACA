@@ -176,21 +176,21 @@ Using this tool in conjunction with test driven development helped minimize the 
 ## Branches used in this project
 | Branch| Purpose |
 | ------------- |:-------------:|
-| main    | Master branch | 
-| dev    | Development branch which each feature branch was branched off of and merged back into |
-| sprint-planning |Feature branch for documentation containing information of the sprint planning for the project|
-| create-rubric-component   | Feature branch for the creation of the rubric component classes with auto generated getters + setters  |
-| add-methods | Feature branch for the project's different add methods (e.g. adding a graded criterion to a student grade) |
-| get-methods   | Feature branch for the project's different get methods (e.g. getting a list of student grades or list of rubrics) |
-| mean-calculations   | Feature branch for the mean calculation features of the project (e.g. getting average student grade for a rubric) |
-| min-max-calculations   | Feature branch for the getting minimum and maximum calculation features of the project (e.g. getting highest or lowest student grade for a rubric) |
-| standard-deviation-calculations   | Feature branch for the standard deviation calculation features of the project (e.g. getting standard deviation of student grades for a rubric) |
-| unit-testing-tdd |Feature branch for documentation containing information on the unit testing and test driven development process |
-| test-coverage |Feature branch for documentation containing information on the project's test coverage |
-| team-version-control |Feature branch for documentation containing information on the GitFlow process |
-| code-review |Feature branch for documentation containing information on the project's code review process |
-| fixes-and-enhancements |Hot fix branch for any fixes or enhancements that need to made to project that may have been missed in reviews |
-| release-1.0.0 | Release branch for the project's first release |
+| [main](https://github.com/rmacken98/FinalSQACA)    | Master branch | 
+| [dev](https://github.com/rmacken98/FinalSQACA/tree/dev)   | Development branch which each feature branch was branched off of and merged back into |
+| [sprint-planning](https://github.com/rmacken98/FinalSQACA/tree/sprint-planning) |Feature branch for documentation containing information of the sprint planning for the project|
+| [create-rubric-component](https://github.com/rmacken98/FinalSQACA/tree/create-rubric-component)  | Feature branch for the creation of the rubric component classes with auto generated getters + setters  |
+| [add-methods](https://github.com/rmacken98/FinalSQACA/tree/add-methods) | Feature branch for the project's different add methods (e.g. adding a graded criterion to a student grade) |
+| [get-methods](https://github.com/rmacken98/FinalSQACA/tree/get-methods)   | Feature branch for the project's different get methods (e.g. getting a list of student grades or list of rubrics) |
+| [mean-calculations](https://github.com/rmacken98/FinalSQACA/tree/mean-calculations)  | Feature branch for the mean calculation features of the project (e.g. getting average student grade for a rubric) |
+| [min-max-calculations](https://github.com/rmacken98/FinalSQACA/tree/min-max-calculations)   | Feature branch for the getting minimum and maximum calculation features of the project (e.g. getting highest or lowest student grade for a rubric) |
+| [standard-deviation-calculations](https://github.com/rmacken98/FinalSQACA/tree/standard-deviation-calculations)   | Feature branch for the standard deviation calculation features of the project (e.g. getting standard deviation of student grades for a rubric) |
+| [unit-testing-tdd](https://github.com/rmacken98/FinalSQACA/tree/unit-testing-tdd) |Feature branch for documentation containing information on the unit testing and test driven development process |
+| [test-coverage](https://github.com/rmacken98/FinalSQACA/tree/test-coverage) |Feature branch for documentation containing information on the project's test coverage |
+| [team-version-control](https://github.com/rmacken98/FinalSQACA/tree/team-version-control) |Feature branch for documentation containing information on the GitFlow process |
+| [code-review](https://github.com/rmacken98/FinalSQACA/tree/code-review) |Feature branch for documentation containing information on the project's code review process |
+| [fixes-and-enhancements](https://github.com/rmacken98/FinalSQACA/tree/fixes-and-enhancements) |Hot fix branch for any fixes or enhancements that need to made to project that may have been missed in reviews |
+| [release-1.0.0]((https://github.com/rmacken98/FinalSQACA/tree/release-1.0.0)) | Release branch for the project's first release |
 
 
 
