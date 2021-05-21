@@ -127,3 +127,18 @@ Below are examples of different commits first showing a feature and its associat
 
 - [Add grades loop method implementation](https://github.com/rmacken98/FinalSQACA/commit/3dd2c383faf7f62a6dfde0b6e84e64cb3901cd93)
 
+# Test Coverage Metric
+
+Before starting this project I had to decide on what test coverage metric tool to use so that I could measure how much of the project's functionality would be covered by the unit tests written for each feature.
+
+Initially I had planned to use the Java Test Runner extension for vsCode as this is my preferred code editor.
+
+However, this extension's test report only provided a list of the number of tests that had passed or failed and where they had failed but did not provide any overall coverage metric. 
+
+Upon further research I decided to use EclEmma which is a java test coverage tool built into the Eclipse IDE. I decided to use this tool as I have a lot of previous experience using Eclipse and EclEmma provides the same features as the Java Test Runner extension for vsCode.
+However, EclEmma also has an overall coverage report for a project along with a test report. Showing the percentage of the functionality that has been covered by JUnit tests for the project overall and for each class in the project. 
+
+![Initial coverage report upon project completion](./images/initialCoverage.jpg "Coverage report.")
+
+
+
