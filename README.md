@@ -3,10 +3,8 @@
 ## Backlog of Tasks
 This is the current backlog of current tasks that need to completed for this sprint.
 
-Tasks will be removed from the backlog as they are completed.
-
-- Get the standard deviation of the score for all students related to specific rubric. 
-- Get the standard deviation of the score for a specific criterion.
+- Backlog is currently empty all tasks completed.
+- Completed tasks with their estimations are listed below.
 
 
 # Task Estimation

@@ -220,6 +220,7 @@ public class Tests {
 		Rubric rubric1 = new Rubric("Final Year Project", criteria);
 		Rubric rubric2 = new Rubric("Management Exam", criteria);
 
+
 		rubric1.addCriterion(criterion1);
 		rubric1.addCriterion(criterion2);
 
@@ -327,6 +328,180 @@ public class Tests {
 	}
 
 	// Test to get the max and minimum student grade from a rubric.
+=======
+// Test to check that list of student grades is returned from getGrades in Student Grade class
+    @Test 
+    public void getGrades() {
+        ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+        Controller.createRubric("Final Year Project", criteria);
+        Criterion criterion1 = Controller.createNewCriterion("Documentation");
+        criterion1.setScore(5);
+        Criterion criterion2 =Controller.createNewCriterion("Testing");
+        criterion2.setScore(5);
+        
+        
+        
+        StudentGrade grade = new StudentGrade(criteria);
+        grade.addCriterion(criterion1);
+        grade.addCriterion(criterion2);
+        
+        assertEquals("List of grades returned",2,grade.getGrades().size());	
+
+        
+        
+    }
+    // Test to check that a list of student grades from a specific criterion is returned from getgetCriterionGrade() in rubric class
+    @Test 
+    public void getCriterionGrades() {
+        ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+        Rubric rubric= Controller.createRubric("Final Year Project", criteria);
+        Criterion criterion1 = Controller.createNewCriterion("Documentation");
+        criterion1.setScore(5);
+        Criterion criterion2 =Controller.createNewCriterion("Testing");
+        criterion2.setScore(5);
+        
+        
+        
+        StudentGrade grade = new StudentGrade(criteria);
+        StudentGrade grade2 = new StudentGrade(criteria);
+
+        grade.addCriterion(criterion1);
+        grade.addCriterion(criterion2);
+        
+        rubric.addGrade(grade);
+         rubric.addGrade(grade2);
+
+        
+        
+        assertEquals("List of grades returned",2,rubric.getCriterionGrade("Testing").size());	
+
+        
+        
+    }
+
+
+
+// Test to search for a rubric and a list of the grades for each of its criteria
+    @Test
+    public void getGradesbyRubric() {
+        
+         String rubricName = "Final year project";
+
+         ArrayList<Rubric> Rubrics = new ArrayList<Rubric>();
+         ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+
+         Criterion criterion1 = new Criterion("Documentation");
+         Criterion criterion2 = new Criterion("Testing");
+         
+         criterion1.setScore(5);
+         criterion2.setScore(5);
+            
+         Rubric rubric1 = new Rubric ("Final Year Project", criteria);
+         Rubric rubric2 = new Rubric ("Management Exam", criteria);
+         
+         rubric1.addCriterion(criterion1);
+         rubric1.addCriterion(criterion2);
+        
+         StudentGrade studentGrade = new StudentGrade(rubric1.getCriterion());
+         rubric1.addGrade(studentGrade);
+
+         Rubrics.add(rubric1);
+         Rubrics.add(rubric2);
+         
+         assertEquals("Specific Rubric returned",rubric1.getGrades(), 
+         Controller.getGradesbyRubric(Rubrics, rubricName));		
+    }
+
+
+  //Test to check that the average grade for a rubric is calculated
+  @Test
+  public void getAverageGrade(){
+      
+          String rubric = "Final year project";
+         ArrayList<Rubric> Rubrics = new ArrayList<Rubric>();
+         ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+         
+         Criterion criterion1 = Controller.createNewCriterion("Documentation");		
+         Criterion criterion2 = Controller.createNewCriterion("Testing");			
+         Criterion criterion3 = Controller.createNewCriterion("Technical Solution");
+        
+         criterion1.setScore(5);
+         criterion2.setScore(3);
+         criterion3.setScore(2);
+            
+         Rubric rubric1 = Controller.createRubric("Final Year Project", criteria);
+         Rubric rubric2 = Controller.createRubric("Management Exam", criteria);
+
+         
+         rubric1.addCriterion(criterion1);
+         rubric1.addCriterion(criterion2);
+         rubric1.addCriterion(criterion3);
+        
+         StudentGrade studentGrade = new StudentGrade(rubric1.getCriterion());
+         rubric1.addGrade(studentGrade);
+
+         Rubrics.add(rubric1);
+         Rubrics.add(rubric2);
+       
+         assertEquals(3, Math.round(Controller.getAverageRubricScore(rubric, Rubrics)));		
+      
+  }
+    // Tests to check whether the average score for a specified criterion is calculated
+    @Test 
+    public void getAverageofACriterion() {
+        
+             String rubric = "Final year project";
+        
+           ArrayList<Rubric> Rubrics = new ArrayList<Rubric>();
+           ArrayList<Criterion> criteria = new ArrayList<Criterion>();
+           ArrayList<StudentGrade> studentGrades = new ArrayList<StudentGrade>();
+           
+           Criterion criterion1 = Controller.createNewCriterion("Documentation");		
+           Criterion criterion2 = Controller.createNewCriterion("Testing");			
+           Criterion criterion3 = Controller.createNewCriterion("Technical Solution");
+          
+           criterion1.setScore(3);
+           criterion3.setScore(4);
+           criterion2.setScore(1);
+              
+           Rubric rubric1 = new Rubric ("Final Year Project", criteria);
+           Rubric rubric2 = new Rubric ("Management Exam", criteria);
+           
+           rubric1.addCriterion(criterion1);
+           rubric1.addCriterion(criterion2);
+           rubric1.addCriterion(criterion3);
+          
+           criterion2.setScore(5);
+           rubric2.addCriterion(criterion2);
+           
+           StudentGrade studentGrade = new StudentGrade(criteria);
+           StudentGrade studentGrade2 = new StudentGrade(criteria);
+           
+           studentGrade.addCriterion(criterion2);
+           studentGrade.addCriterion(criterion1);
+
+           studentGrade2.addCriterion(criterion2);
+           studentGrade2.addCriterion(criterion3);
+
+           criteria.add(criterion1);
+           
+           rubric1.addGrade(studentGrade);
+           rubric1.addGrade(studentGrade);
+           
+           Controller.addCriterionToStudentGrade(criterion1, studentGrade);
+           Controller.addCriterionToStudentGrade(criterion1, studentGrade2);
+           studentGrades.add(studentGrade);
+           studentGrades.add(studentGrade2);
+
+           Rubrics.add(rubric1);
+           Rubrics.add(rubric2);
+
+           
+           assertEquals(3, Math.round(Controller.getAverageofCriterion(studentGrades, "documentation")));
+          
+        
+    }
+    // Test to get the max and minimum student grade from a rubric.
 	// Also tests standard deviation calculation.
 	@Test
 	public void minMaxAndStandardDevGrade() {
@@ -338,7 +513,6 @@ public class Tests {
 
 		ArrayList<StudentGrade> studentGrades = new ArrayList<StudentGrade>();
 
-	
 		Rubric rubric1 = new Rubric("Final Year Project", criteria);
 
 		StudentGrade studentGrade1 = new StudentGrade(criteria);
@@ -363,9 +537,13 @@ public class Tests {
 
 	}
 
-	// Test to check that the student grade with highest and lowest scores for a
+       
+     
+ }
+    // Test to check that the student grade with highest and lowest scores for a
 	// criterion is returned
-	// Also check standard deviation calculation for criterion
+    // Also check standard deviation calculation for 
+    
 	@Test
 	public void MinOrMaxStandardDevCriterion() {
 
@@ -384,6 +562,7 @@ public class Tests {
 		Controller.gradeACriterion("Testing", studentGrade2, 5);
 		Controller.gradeACriterion("Tech", studentGrade2, 1);
 
+
 		Rubric rubric1 = new Rubric("Final Year Project", criteria);
 
 		rubric1.addGrade(studentGrade1);
@@ -391,6 +570,7 @@ public class Tests {
 
 		studentGrades.add(studentGrade1);
 		studentGrades.add(studentGrade2);
+
 
 		Rubrics.add(rubric1);
 
@@ -401,3 +581,4 @@ public class Tests {
 	}
 
 }
+
